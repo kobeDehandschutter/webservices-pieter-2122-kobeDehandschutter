@@ -1,0 +1,18 @@
+{
+  "scripts": {
+    "start": "nodemon src/index.js"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.14"
+  },
+  "dependencies": {
+    "koa": "^2.13.4",
+    "mysql2": "^2.3.2"
+  },
+  "name": "webservices-pieter-2122-kobeDehandschutter",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "repository": "https://github.com/HOGENT-Web/webservices-pieter-2122-kobeDehandschutter",
+  "author": "Kobe Dehandschutter <Kobe.Dehandschutter@student.hogent.be>",
+  "license": "MIT"
+}
