@@ -3,12 +3,19 @@
     "start": "nodemon src/index.js"
   },
   "devDependencies": {
-    "nodemon": "^2.0.14"
+    "nodemon": "^2.0.15"
   },
   "dependencies": {
+    "@koa/cors": "^3.1.0",
+    "@koa/router": "^10.1.1",
     "config": "^3.3.6",
+    "env-cmd": "^10.1.0",
+    "knex": "^0.95.14",
     "koa": "^2.13.4",
-    "mysql2": "^2.3.2"
+    "koa-bodyparser": "^4.3.0",
+    "mysql2": "^2.3.2",
+    "uuid": "^8.3.2",
+    "winston": "^3.3.3"
   },
   "name": "webservices-pieter-2122-kobeDehandschutter",
   "version": "1.0.0",
