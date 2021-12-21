@@ -1,7 +1,9 @@
-const { getChildLogger } = require('../core/logging');
+const { getLogger } = require('../core/logging');
 const userRepository = require('../repository/user');
 const Role = require('../core/roles');
-
+const debugLog = (message, meta) => {
+  getLogger().debug(message, meta);
+};
 /**
  * Register a new user
  *
@@ -10,11 +12,11 @@ const Role = require('../core/roles');
  */
 const { verifyPassword, hashPassword } = require('../core/password');
 const { generateJWT } = require('../core/jwt');
-const makeExposedUser = ({ id, name, email, roles }) => ({
+const makeExposedUser = ({ id, name, rights, favourite }) => ({
   id,
   name,
-  email,
-  roles,
+  rights,
+  favourite,
 });
 const makeLoginData = async (user) => {
   const token = await generateJWT(user);
@@ -23,32 +25,37 @@ const makeLoginData = async (user) => {
     token,
   };
 };
-const login = async (email, password) => {
-  const user = await userRepository.findByEmail(email);
+const login = async (name, password) => {
+  const user = await userRepository.findByName(name);
 
   if (!user) {
     // DO NOT expose we don't know the user
-    throw new Error('The given email and password do not match');
+    throw new Error('The given name and password do not match');
   }
-
-  const passwordValid = await verifyPassword(password, user.password_hash);
+  const passwordValid = await verifyPassword(password, user.password);
 
   if (!passwordValid) {
     // DO NOT expose we know the user but an invalid password was given
-    throw new Error('The given email and password do not match');
+    throw new Error('The given name and password do not match');
   }
 
   return await makeLoginData(user);
 };
-const register = async ({ name, password }) => {
+const register = async ({ name, password, favourite }) => {
+  /*if (userRepository.findByName(name) !== null) {
+    throw new Error('This username is taken');
+  }*/
   const passwordHash = await hashPassword(password);
+  const rechten = Role.USER;
   const user = await userRepository.create({
     name,
     passwordHash,
-    roles: [Role.USER],
+    rechten,
+    favourite,
   });
   return await makeLoginData(user);
 };
+
 const checkRole = (role, roles) => {
   const hasPermission = roles.includes(role);
 
@@ -83,19 +90,21 @@ const checkAndParseSession = async (authHeader) => {
 
 const getAll = async (limit = 100, offset = 0) => {
   debugLog('Fetching all users', { limit, offset });
-  const data = await userRepository.findAll();
+  const data = await userRepository.findAll(limit, offset);
   const count = await userRepository.findCount();
+
   return { data, count, limit, offset };
 };
 
 const getById = async (id) => {
   debugLog(`Fetching user with id ${id}`);
   const user = await userRepository.findById(id);
+  console.log(user);
 
   if (!user) {
     throw new Error(`No user with is ${id} exists`);
   }
-  return false;
+  return user;
 };
 const updateById = async (id, { name }) => {
   return userRepository.updateById(id, { name });

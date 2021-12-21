@@ -45,6 +45,7 @@ function getKnex() {
 
 const tables = Object.freeze({
   filmsOrSeries: 'filmsOrSeries',
+  users: 'users',
 });
 
 module.exports = {

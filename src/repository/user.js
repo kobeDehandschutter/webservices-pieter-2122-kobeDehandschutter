@@ -10,18 +10,14 @@ const { getChildLogger } = require('../core/logging');
  * @param {number} pagination.offset - Nr of transactions to skip.
  */
 const findAll = ({ limit, offset }) => {
-  return getKnex()(tables.user)
-    .select()
-    .limit(limit)
-    .offset(offset)
-    .orderBy('name', 'ASC');
+  return getKnex()(tables.users).select().limit(limit).offset(offset);
 };
 
 /**
  * Calculate the total number of user.
  */
 const findCount = async () => {
-  const [count] = await getKnex()(tables.user).count();
+  const [count] = await getKnex(tables.users).count();
   return count['count(*)'];
 };
 
@@ -31,7 +27,12 @@ const findCount = async () => {
  * @param {string} id - The id to search for.
  */
 const findById = (id) => {
-  return getKnex()(tables.user).where('id', id).first();
+  return getKnex()(tables.users).where('id', id).first();
+};
+
+const findByName = (name) => {
+  console.log(name);
+  return getKnex()(tables.users).where('name', name).first();
 };
 
 /**
@@ -40,14 +41,15 @@ const findById = (id) => {
  * @param {object} user - User to create.
  * @param {string} user.name - Name of the user.
  */
-const create = async ({ rights, name, passwordHash }) => {
+const create = async ({ name, passwordHash, rights, favourite }) => {
   try {
     const id = uuid.v4();
-    await getKnex()(tables.user).insert({
-      id,
+    await getKnex()(tables.users).insert({
+      id: id,
       rights: JSON.stringify(rights),
       name,
-      passwordHash,
+      password: passwordHash,
+      favourite,
     });
     return await findById(id);
   } catch (error) {
@@ -68,7 +70,7 @@ const create = async ({ rights, name, passwordHash }) => {
  */
 const updateById = async (id, { name }) => {
   try {
-    await getKnex()(tables.user)
+    await getKnex()(tables.users)
       .update({
         name,
       })
@@ -90,7 +92,7 @@ const updateById = async (id, { name }) => {
  */
 const deleteById = async (id) => {
   try {
-    const rowsAffected = await getKnex()(tables.user).delete().where('id', id);
+    const rowsAffected = await getKnex()(tables.users).delete().where('id', id);
     return rowsAffected > 0;
   } catch (error) {
     const logger = getChildLogger('users-repo');
@@ -108,4 +110,5 @@ module.exports = {
   create,
   updateById,
   deleteById,
+  findByName,
 };

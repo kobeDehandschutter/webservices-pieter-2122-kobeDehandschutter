@@ -12,8 +12,8 @@ module.exports = (app) => {
     prefix: '/api',
   });
 
-  installfilmRouter(router);
   installUserRouter(router);
+  installfilmRouter(router);
 
   app.use(router.routes()).use(router.allowedMethods());
 };

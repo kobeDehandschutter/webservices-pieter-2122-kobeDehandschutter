@@ -4,27 +4,47 @@ const { requireAuthentication, makeRequireRole } = require('../core/auth');
 
 const Role = require('../core/roles');
 const login = async (ctx) => {
-  const { email, password } = ctx.request.body;
-  const session = await userService.login(email, password);
+  const { name, password } = ctx.request.body;
+  const session = await userService.login(name, password);
   ctx.body = session;
 };
 const register = async (ctx) => {
   const session = await userService.register(ctx.request.body);
   ctx.body = session;
 };
-module.exports = function installUsersRoutes(app) {
+const getAll = async (ctx) => {
+  ctx.body = await userService.getAll();
+};
+const getById = async (ctx) => {
+  const user = await userService.getById(ctx.params.id);
+  console.log(user);
+  console.log('hierzo');
+  ctx.body = await userService.getById(ctx.params.id);
+};
+const updateById = async (ctx) => {
+  ctx.body = await userService.updateById();
+};
+const deleteById = async (ctx) => {
+  ctx.body = await userService.deleteById();
+};
+module.exports = async function installUsersRoutes(app) {
   const router = new Router({
     prefix: '/users',
   });
 
   const requireAdmin = makeRequireRole(Role.ADMIN);
 
+  const data = await userService.getAll();
+  console.log('voor');
+  console.log(data.data);
+  console.log('na');
+
   router.post('/login', login);
   router.post('/register', register);
-  router.get('/', requireAuthentication, requireAdmin, userService.getAll);
-  router.get('/:id', requireAuthentication, userService.getById);
-  router.put('/:id', requireAuthentication, userService.updateById);
-  router.delete('/:id', requireAuthentication, userService.deleteById);
+  router.get('/aa', getAll);
+  router.get('/:id', getById);
+  router.put('/:id', requireAuthentication, updateById);
+  router.delete('/:id', requireAuthentication, deleteById);
 
   app.use(router.routes()).use(router.allowedMethods());
 };
