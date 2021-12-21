@@ -1,5 +1,6 @@
 const Router = require('@koa/router');
 const installfilmRouter = require('./_films');
+const installUserRouter = require('./_user');
 
 /**
  * Install all routes in the given Koa application.
@@ -12,6 +13,7 @@ module.exports = (app) => {
   });
 
   installfilmRouter(router);
+  installUserRouter(router);
 
   app.use(router.routes()).use(router.allowedMethods());
 };
