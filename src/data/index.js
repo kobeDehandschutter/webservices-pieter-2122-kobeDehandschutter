@@ -29,7 +29,8 @@ async function initializeData() {
     const result = await knexInstance('filmsOrSeries').select();
     console.log(result);
   } catch (error) {
-    logger.error(error.message, { error });
+    console.log(error.message, { error });
+    //logger.error(error.message, { error });
     throw new Error('Could not initialize the data layer');
   }
 

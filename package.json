@@ -1,6 +1,8 @@
 {
+  "license": "UNLICENSED",
   "scripts": {
-    "start": "npx env-cmd nodemon src/index.js"
+    "start": "npx env-cmd nodemon src/index.js",
+    "test:ci": "jest"
   },
   "devDependencies": {
     "nodemon": "^2.0.15"

@@ -14,7 +14,15 @@ module.exports = {
     name: 'marveldatabase',
     username: 'root',
     password: '2187Kobe',
-  },
+  } /*,
+  database: {
+    client: 'mysql2',
+    host: '127.0.0.1',
+    port: 3306,
+    name: 'faoXDegfq7',
+    username: 'faoXDegfq7',
+    password: 'eS5kclFYe2',
+  },*/,
   pagination: {
     limit: 100,
     offset: 0,
