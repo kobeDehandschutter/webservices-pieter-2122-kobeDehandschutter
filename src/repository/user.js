@@ -31,7 +31,6 @@ const findById = (id) => {
 };
 
 const findByName = (name) => {
-  console.log(name);
   return getKnex()(tables.users).where('name', name).first();
 };
 
@@ -46,7 +45,7 @@ const create = async ({ name, passwordHash, rights, favourite }) => {
     const id = uuid.v4();
     await getKnex()(tables.users).insert({
       id: id,
-      rights: JSON.stringify(rights),
+      rights,
       name,
       password: passwordHash,
       favourite,

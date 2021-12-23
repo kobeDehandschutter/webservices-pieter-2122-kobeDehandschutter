@@ -2,7 +2,13 @@ const Router = require('@koa/router');
 const filmService = require('../service/film');
 
 const getAllfilms = async (ctx) => {
+  console.log(ctx);
   ctx.body = await filmService.getAll();
+};
+const addFilm = async (ctx) => {
+  console.log(ctx.request.body);
+  const session = await filmService.addFilm(ctx.request.body);
+  ctx.body = session;
 };
 
 /**
@@ -16,6 +22,7 @@ module.exports = (app) => {
   });
 
   router.get('/', getAllfilms);
+  router.post('/add', addFilm);
 
   app.use(router.routes()).use(router.allowedMethods());
 };

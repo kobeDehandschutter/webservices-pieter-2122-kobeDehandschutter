@@ -45,12 +45,13 @@ const register = async ({ name, password, favourite }) => {
   /*if (userRepository.findByName(name) !== null) {
     throw new Error('This username is taken');
   }*/
+
+  rights = Role.USER;
   const passwordHash = await hashPassword(password);
-  const rechten = Role.USER;
   const user = await userRepository.create({
     name,
     passwordHash,
-    rechten,
+    rights,
     favourite,
   });
   return await makeLoginData(user);
@@ -99,7 +100,6 @@ const getAll = async (limit = 100, offset = 0) => {
 const getById = async (id) => {
   debugLog(`Fetching user with id ${id}`);
   const user = await userRepository.findById(id);
-  console.log(user);
 
   if (!user) {
     throw new Error(`No user with is ${id} exists`);

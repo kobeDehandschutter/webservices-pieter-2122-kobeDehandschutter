@@ -1,11 +1,19 @@
 {
-  "license": "UNLICENSED",
+  "jest": {
+    "testPathIgnorePatterns": ["node_modules", "config"]
+  },
+  "license": "MIT",
   "scripts": {
     "start": "npx env-cmd nodemon src/index.js",
+    "test": "npx env-cmd -f .env.test jest",
+    "test:coverage": "yarn test --coverage",
     "test:ci": "jest"
   },
   "devDependencies": {
-    "nodemon": "^2.0.15"
+    "jest": "^27.4.5",
+    "jest-each": "^27.4.2",
+    "nodemon": "^2.0.15",
+    "supertest": "^6.1.6"
   },
   "dependencies": {
     "@koa/cors": "^3.1.0",
@@ -25,6 +33,5 @@
   "version": "1.0.0",
   "main": "src/index.js",
   "repository": "https://github.com/HOGENT-Web/webservices-pieter-2122-kobeDehandschutter",
-  "author": "Kobe Dehandschutter <Kobe.Dehandschutter@student.hogent.be>",
-  "license": "MIT"
+  "author": "Kobe Dehandschutter <Kobe.Dehandschutter@student.hogent.be>"
 }

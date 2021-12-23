@@ -27,7 +27,6 @@ async function initializeData() {
   try {
     await knexInstance.raw('SELECT 1+1 AS result');
     const result = await knexInstance('filmsOrSeries').select();
-    console.log(result);
   } catch (error) {
     console.log(error.message, { error });
     //logger.error(error.message, { error });

@@ -25,6 +25,26 @@ const getAll = async (
   return { data };
 };
 
+const addFilm = async ({
+  id,
+  title,
+  filmOrSerie,
+  releaseDate,
+  photo,
+  summary,
+}) => {
+  const film = await filmRepository.addFilm({
+    id,
+    title,
+    filmOrSerie,
+    releaseDate,
+    photo,
+    summary,
+  });
+  return await getAll();
+};
+
 module.exports = {
   getAll,
+  addFilm,
 };

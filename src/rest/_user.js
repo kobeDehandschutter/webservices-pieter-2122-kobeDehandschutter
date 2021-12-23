@@ -16,9 +16,6 @@ const getAll = async (ctx) => {
   ctx.body = await userService.getAll();
 };
 const getById = async (ctx) => {
-  const user = await userService.getById(ctx.params.id);
-  console.log(user);
-  console.log('hierzo');
   ctx.body = await userService.getById(ctx.params.id);
 };
 const updateById = async (ctx) => {
@@ -35,9 +32,6 @@ module.exports = async function installUsersRoutes(app) {
   const requireAdmin = makeRequireRole(Role.ADMIN);
 
   const data = await userService.getAll();
-  console.log('voor');
-  console.log(data.data);
-  console.log('na');
 
   router.post('/login', login);
   router.post('/register', register);
