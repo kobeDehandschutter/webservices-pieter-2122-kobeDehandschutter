@@ -4,11 +4,7 @@ module.exports = {
     disabled: false,
   },
   cors: {
-    origins: [
-      'http://localhost:3000',
-      'https://kobedehandschutter.github.io/frontendweb-karine-2122-kobeDehandschutter/',
-      'https://kobedehandschutter.github.io',
-    ],
+    origins: ['http://localhost:3000', 'https://kobedehandschutter.github.io'],
     maxAge: 3 * 60 * 60,
   } /*
   database: {
