@@ -20,7 +20,7 @@ const getAll = async (
   limit = DEFAULT_PAGINATION_LIMIT,
   offset = DEFAULT_PAGINATION_OFFSET
 ) => {
-  debugLog('Fetching all films', { limit, offset });
+  //debugLog('Fetching all films', { limit, offset });
   const data = await filmRepository.findAll({ limit, offset });
   return { data };
 };
