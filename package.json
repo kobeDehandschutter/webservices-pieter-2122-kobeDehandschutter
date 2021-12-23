@@ -30,9 +30,10 @@
     "uuid": "^8.3.2",
     "winston": "^3.3.3"
   },
-  "name": "webservices-pieter-2122-kobeDehandschutter",
+  "name": "webservices-pieter-2122-kobedehandschutter",
   "version": "1.0.0",
   "main": "src/index.js",
   "repository": "https://github.com/HOGENT-Web/webservices-pieter-2122-kobeDehandschutter",
   "author": "Kobe Dehandschutter <Kobe.Dehandschutter@student.hogent.be>"
+
 }
