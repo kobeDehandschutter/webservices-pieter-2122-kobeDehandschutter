@@ -45,8 +45,9 @@ async function main() {
 
   installRest(app);
 
-  app.listen(9000);
-  logger.info(`🚀 Server listening on http://localhost:9000`);
+  const port = process.env.PORT || 9000;
+  app.listen(port);
+  logger.info(`🚀 Server listening on http://localhost:${port}`);
 }
 
 // Wrap inside a main function as top level await is not supported in all NodeJS versions
