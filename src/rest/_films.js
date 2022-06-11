@@ -2,7 +2,7 @@ const Router = require('@koa/router');
 const filmService = require('../service/film');
 
 const getAllfilms = async (ctx) => {
-  console.log(ctx);
+  console.log("test");
   ctx.body = await filmService.getAll();
 };
 const addFilm = async (ctx) => {
