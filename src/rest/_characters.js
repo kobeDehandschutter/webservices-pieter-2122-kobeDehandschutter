@@ -1,12 +1,16 @@
 const Router = require('@koa/router');
 const characterService = require('../service/characters');
 
+const { requireAuthentication, makeRequireRole } = require('../core/auth');
+const filmService = require('../service/film');
+const Role = require('../core/roles');
+
 const getAllCharacters = async (ctx) => {
-  console.log("here");
+  console.log("we zijn verkeerd ");
   ctx.body = await characterService.getAll();
 };
 const getCharactersByFilm = async (ctx) => {
-  console.log(ctx.request.body);
+  console.log("we zijn hier eh");
   const session = await characterService.findByFilm(ctx.params.film);
   ctx.body = session;
 };
@@ -21,8 +25,10 @@ module.exports = (app) => {
     prefix: '/characters',
   });
 
-  router.get('/', getAllCharacters);
-  router.post('/:film', getCharactersByFilm);
+  const requireAdmin = makeRequireRole(Role.ADMIN);
+
+  router.get('/',requireAuthentication,  getAllCharacters);
+  router.get('/:film', getCharactersByFilm);
 
   app.use(router.routes()).use(router.allowedMethods());
 };

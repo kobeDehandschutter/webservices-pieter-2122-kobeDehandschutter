@@ -30,6 +30,7 @@ const findById = (id) => {
   return getKnex()(tables.users).where('id', id).first();
 };
 
+
 const findByName = (name) => {
   return getKnex()(tables.users).where('name', name).first();
 };

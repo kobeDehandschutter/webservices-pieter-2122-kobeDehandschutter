@@ -14,8 +14,8 @@ const findAll = ({ limit, offset }) => {
 };
 
 const findByFilm = (film) => {
-    return getKnex()(tables.characters)
-    .join(tables.CharactersInFilms)
+    return getKnex()(tables.CharactersInFilms)
+    .join(tables.characters , tables.CharactersInFilms + '.FilmName', '=', tables.characters + '.name'  )
     .where('filmName', film);
 }
 

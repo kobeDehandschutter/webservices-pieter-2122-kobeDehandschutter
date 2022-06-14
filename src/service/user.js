@@ -4,6 +4,7 @@ const Role = require('../core/roles');
 const debugLog = (message, meta) => {
   getLogger().debug(message, meta);
 };
+const { getChildLogger } = require('../core/logging');
 /**
  * Register a new user
  *
@@ -11,7 +12,8 @@ const debugLog = (message, meta) => {
  * @param {string} user.name - The user's name.
  */
 const { verifyPassword, hashPassword } = require('../core/password');
-const { generateJWT } = require('../core/jwt');
+
+const { generateJWT, verifyJWT } = require('../core/jwt');
 const makeExposedUser = ({ id, name, rights, favourite }) => ({
   id,
   name,
@@ -102,10 +104,21 @@ const getById = async (id) => {
   const user = await userRepository.findById(id);
 
   if (!user) {
-    throw new Error(`No user with is ${id} exists`);
+    throw new Error(`No user with id ${id} exists`);
   }
   return user;
 };
+
+const getByName = async (name) => {
+  debugLog(`Fetching user with name ${name}`);
+  const user = await userRepository.findByName(name);
+
+  if (!user) {
+    return null;
+  }
+  return user;
+};
+
 const updateById = async (id, { name }) => {
   return userRepository.updateById(id, { name });
 };
@@ -127,4 +140,5 @@ module.exports = {
   getById,
   checkAndParseSession,
   checkRole,
+  getByName,
 };
