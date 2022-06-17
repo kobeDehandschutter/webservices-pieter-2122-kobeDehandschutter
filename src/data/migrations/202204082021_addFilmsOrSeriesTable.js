@@ -17,8 +17,8 @@ module.exports = {
             
             table.string('summary', 10000).notNullable();
             
-                
-        });
+
+        }); 
     },
     down: (knex) =>{
         return knex.schema.dropTableIfExists(tables.filmsOrSeries)

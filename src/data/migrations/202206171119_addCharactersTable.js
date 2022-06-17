@@ -7,7 +7,7 @@ module.exports = {
             table.string('name', 30)
             .primary();
             
-            table.string('alterEgo', 30).notNullable();
+            table.string('alterEgo', 30);
 
             table.string('actor', 30).notNullable();
 
@@ -22,4 +22,4 @@ module.exports = {
     down: (knex) =>{
         return knex.schema.dropTableIfExists(tables.characters)
     }
-}
+} 
