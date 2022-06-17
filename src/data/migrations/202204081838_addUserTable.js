@@ -1,26 +1,24 @@
-// const { tables } = require('..')
+const { tables } = require('..')
 
-// module.exports = {
-//     up: async (knex) => {
-//         await knex.schema.createTable(tables.users,(table) =>{
+module.exports = {
+    up: async (knex) => {
+        await knex.schema.createTable(tables.users,(table) =>{
             
-//             table.uuid('id')
-//             .primary();
+            table.uuid('id')
+            .primary();
             
-//             table.string('name', 255).notNullable();
+            table.string('name', 100).notNullable();
 
-//             table.unique('username', 'idx_users_username_unique');
+            table.string('password', 200).notNullable();
 
-//             table.string('password').notNullable();
+            table.string('rights', 20).notNullable();
 
-//             table.string('rights').notNullable();
-
-//             table.string('favourite').notNullable();
+            table.string('favourite', 50).notNullable();
             
 
-//         });
-//     },
-//     down: (knex) =>{
-//         return null //knex.schema.dropTableIfExists(tables.users)
-//     }
-// }
+        });
+    },
+    down: (knex) =>{
+        return knex.schema.dropTableIfExists(tables.users)
+    }
+}

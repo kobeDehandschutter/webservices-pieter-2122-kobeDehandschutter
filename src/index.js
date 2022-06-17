@@ -15,7 +15,7 @@ const LOG_DISABLED = config.get('log.disabled');
 async function main() {
   initializeLogger({
     level: LOG_LEVEL,
-    disabled: LOG_DISABLED,
+    disabled: LOG_DISABLED, 
     isProduction: NODE_ENV === 'production',
     defaultMeta: { NODE_ENV },
   });
