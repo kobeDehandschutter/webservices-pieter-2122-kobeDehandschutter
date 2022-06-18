@@ -6,7 +6,7 @@ module.exports = {
   cors: {
     origins: ['http://localhost:3000'],
     maxAge: 3 * 60 * 60,
-  } /*
+  } ,
     database: {
       client: 'mysql2',
       host: '127.0.0.1',
@@ -14,7 +14,7 @@ module.exports = {
       name: 'examendatabanklokaal',
       username: 'root',
       password: 'rootp',
-    } */,
+    } ,/*
   database: {
     client: 'mysql2',
     host: 'remotemysql.com',
@@ -22,7 +22,7 @@ module.exports = {
     name: 'faoXDegfq7',
     username: 'faoXDegfq7',
     password: 'eS5kclFYe2',
-  },
+  },*/
   pagination: {
     limit: 100,
     offset: 0,

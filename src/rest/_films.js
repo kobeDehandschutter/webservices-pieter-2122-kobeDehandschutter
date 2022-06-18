@@ -5,11 +5,9 @@ const filmService = require('../service/film');
 const Role = require('../core/roles');
 
 const getAllfilms = async (ctx) => {
-  console.log("test");
   ctx.body = await filmService.getAll();
 };
 const addFilm = async (ctx) => {
-  console.log(ctx.request.body);
   const session = await filmService.addFilm(ctx.request.body);
   ctx.body = session;
 };
@@ -27,7 +25,7 @@ module.exports = (app) => {
   const requireAdmin = makeRequireRole(Role.ADMIN);
 
   router.get('/', requireAuthentication, getAllfilms);
-  router.post('/add', requireAdmin, addFilm);
+  router.post('/add', requireAuthentication, requireAdmin, addFilm);
 
   app.use(router.routes()).use(router.allowedMethods());
 };

@@ -6,7 +6,6 @@ module.exports.requireAuthentication = async (ctx, next) => {
   const { authToken, ...session } = await userService.checkAndParseSession(
     authorization
   );
-
   ctx.state.session = session;
   ctx.state.authToken = authToken;
 
@@ -14,6 +13,7 @@ module.exports.requireAuthentication = async (ctx, next) => {
 };
 
 module.exports.makeRequireRole = (role) => async (ctx, next) => {
+  
   const { roles = [] } = ctx.state.session;
 
   userService.checkRole(role, roles);

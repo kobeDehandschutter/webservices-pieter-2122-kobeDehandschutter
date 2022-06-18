@@ -205,7 +205,7 @@ module.exports = {
         title:'What If',
         filmorserie: 'serie',
         releasedate: '2021-08-03', 
-        photo: 'https://static.wikia.nocookie.net/mcu/images/3/34/Whatifposter.jpg/revision/latest?cb=20210709105626&path-prefix=nl',
+        photo: 'https://static.posters.cz/image/750/posters/marvel-studios-what-if-shattered-ralities-i120004.jpg',
         summary: 'What if instead of Steve Rogers, Peggy Carter (Hayley Atwell) actually became the first Super Soldier? That creative brainstorming exercise is the heart of What If...?, the Marvel Cinematic Universe\'s first animated series. The anthology reimagines numerous major events from the movies in game-changing ways, and also features Chadwick Boseman, who was able to reprise T\'Challa via voice work before his death.',
       },{
         id: 29,

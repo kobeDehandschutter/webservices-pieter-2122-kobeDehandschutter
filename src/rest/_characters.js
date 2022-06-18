@@ -6,7 +6,6 @@ const filmService = require('../service/film');
 const Role = require('../core/roles');
 
 const getAllCharacters = async (ctx) => {
-  console.log("we zijn verkeerd ");
   ctx.body = await characterService.getAll();
 };
 const getCharactersByFilm = async (ctx) => {
