@@ -34,10 +34,10 @@ module.exports = async function installUsersRoutes(app) {
 
 
   const data = await userService.getAll();
-
+ 
   router.post('/login', login);
-  router.post('/register', register);
-  router.get('/aa', requireAuthentication, getAll);
+  router.post('/register', register); 
+  router.get('/all', requireAuthentication, getAll);
   router.get('/:id', getById);
   router.get('/name/:name', getByName);
   router.put('/:id', requireAuthentication, updateById);
