@@ -1,3 +1,8 @@
+test('our first test should succeed', () => {
+    expect(2 + 2).toBe(4);
+  });
+  
+
 // const { tables } = require('../../src/data')
 // const { withServer, loginAdmin } = require("../supertest.setup");
 
