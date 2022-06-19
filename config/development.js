@@ -7,22 +7,22 @@ module.exports = {
     origins: ['http://localhost:3000'],
     maxAge: 3 * 60 * 60,
   } ,
+  // database: {
+  //   client: 'mysql2',
+  //   host: '127.0.0.1',
+  //   port: 3306,
+  //   name: 'examendatabanklokaal',
+  //   username: 'root',
+  //   password: 'rootp',
+  // } ,
   database: {
-    client: 'mysql2',
-    host: '127.0.0.1',
-    port: 3306,
-    name: 'examendatabanklokaal',
-    username: 'root',
-    password: 'rootp',
-  } ,
-  /*database: {
     client: 'mysql2',
     host: 'remotemysql.com',
     port: 3306,
     name: 'faoXDegfq7',
     username: 'faoXDegfq7',
     password: 'eS5kclFYe2',
-  },*/
+  },
   pagination: {
     limit: 100,
     offset: 0,
