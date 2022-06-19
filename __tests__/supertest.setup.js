@@ -1,3 +1,7 @@
+test('our first test should succeed', () => {
+    expect(2 + 2).toBe(4);
+  });
+
 // const supertest = require('supertest');
 // const createServer = require('../src/createServer');
 // const { getKnex } = require('../src/data');
