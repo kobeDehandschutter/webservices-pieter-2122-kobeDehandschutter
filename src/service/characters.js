@@ -30,8 +30,14 @@ const findByFilm = async (film) => {
     const data = await characterRepository.findByFilm(film);
     return data;
 }
+const getLogoByName = async (name) => {
+  debugLog(`fetching logo for ${name}`);
+  const data = await characterRepository.getLogoByName(name);
+  return data;
+}
 
 module.exports = {
   getAll,
   findByFilm,
+  getLogoByName,
 };

@@ -14,12 +14,19 @@ const findAll = ({ limit, offset }) => {
 };
 
 const findByFilm = (film) => {
-    return getKnex()(tables.CharactersInFilms)
-    .join(tables.characters , tables.CharactersInFilms + '.FilmName', '=', tables.characters + '.name'  )
+    return getKnex()(tables.characters)
+    .join(tables.CharactersInFilms , tables.characters + '.name', '=', tables.CharactersInFilms + '.characterName'  )
     .where('filmName', film);
+}
+const getLogoByName = (name) => {
+  return getKnex()(tables.characters)
+  .select(tables.characters  + ".logo")
+  .where('name', name)
+  .limit(1);
 }
 
 module.exports = {
   findAll,
   findByFilm,
+  getLogoByName,
 };

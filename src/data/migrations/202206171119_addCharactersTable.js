@@ -10,10 +10,13 @@ module.exports = {
             table.string('alterEgo', 30);
 
             table.string('actor', 30).notNullable();
+            
+            table.string('logo', 500).notNullable();
 
             table.string('photo', 500).notNullable();
 
             table.string('info', 15000).notNullable();
+
             
             
 
