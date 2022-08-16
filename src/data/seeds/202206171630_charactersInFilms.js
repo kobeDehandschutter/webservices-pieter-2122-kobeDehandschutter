@@ -719,6 +719,10 @@ module.exports = {
         characterName: 'Kang',
       },
       {
+        filmName: 'Loki',
+        characterName: 'Kang',
+      },
+      {
         filmName: 'Guardians of the Galaxy Vol. 3',
         characterName: 'Starlord',
       },
@@ -728,7 +732,7 @@ module.exports = {
       },
       {
         filmName: 'Guardians of the Galaxy Vol. 3',
-        characterName: 'Rocket',
+        characterName: 'Rocket raccoon',
       },
       {
         filmName: 'Guardians of the Galaxy Vol. 3',
@@ -737,6 +741,10 @@ module.exports = {
       {
         filmName: 'Guardians of the Galaxy Vol. 3',
         characterName: 'Drax',
+      },
+      {
+        filmName: 'Guardians of the Galaxy Vol. 3',
+        characterName: 'Nebula',
       },
       {
         filmName: 'Guardians of the Galaxy Vol. 3',
