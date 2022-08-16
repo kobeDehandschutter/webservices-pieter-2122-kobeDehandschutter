@@ -244,12 +244,55 @@ module.exports = {
         summary: 'Following the events of Spider-Man: No Way Home and the first season of Loki, Dr. Stephen Strange\'s continuing research on the Time Stone is hindered by a friend-turned-enemy, resulting in Strange unleashing unspeakable evil',
     },{
         id: 34,
+        title:'Ms. Marvel',
+        filmorserie: 'serie',
+        releasedate: '2022-06-08', 
+        photo: 'https://terrigen-cdn-dev.marvel.com/content/prod/1x/ms_marvel_0.jpg',
+        summary: 'Kamala Khan is a normal teenage girl who dreams of being a superhero, working with the Avengers. When she goes to a party an unexpected fog rolls in and she finds herself talking to Captain Marvel, who gifts her with extraordinary gifts. Soon Kamala realizes that being a superhero with superpowers is not as easy as she always dreamed. Kamala has to learn to balance her personal life with her new identity, all while saving friends from a villain who is moving in on New York.',
+    },{
+        id: 35,
         title:'Thor: Love and Thunder',
         filmorserie: 'film',
         releasedate: '2022-07-08', 
         photo: 'https://m.media-amazon.com/images/M/MV5BYmMxZWRiMTgtZjM0Ny00NDQxLWIxYWQtZDdlNDNkOTEzYTdlXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg',
         summary: 'We expect Thor: Love and Thunder to address the way we left the god of thunder at the end of Avengers: Endgame – that is, overweight, and teaming up with the Guardians of the Galaxy. This movie will be released before Guardians of the Galaxy Vol. 3 (due in 2023), so we expect that plot point to be touched upon here. Valkyrie was left as the ruler of New Asgard, a seaside village on Earth, so it\'ll be interesting to see how their stories link up again. Taika Waititi has indicated that the overweight Thor stuff had been done already, which perhaps explains why Hemsworth is in such godly shape in all the photos that have leaked from the set.Love and Thunder will be inspired by the Mighty Thor comics of star Marvel writer Jason Aaron. In that comic, Odinson loses the ability to lift Mjolnir, and Jane Foster takes on the mantle of Thor, while simultaneously battling cancer in her human hours.',
-    },
+    },{
+        id: 36,
+        title:'She-Hulk: Attorney at Law',
+        filmorserie: 'serie',
+        releasedate: '2022-08-18', 
+        photo: 'https://wwwflickeringmythc3c8f7.zapwp.com/q:i/r:1/wp:1/w:362/u:https://cdn.flickeringmyth.com/wp-content/uploads/2022/08/She-hulk-psoter-5-600x858.jpg',
+        summary: 'She-Hulk: Attorney at Law follows Jennifer Walters as she navigates the complicated life of a single, 30-something attorney who also happens to be a green 6-foot-7-inch superpowered hulk.',
+    },{
+        id: 37,
+        title:'Black Panther: Wakanda Forever',
+        filmorserie: 'film',
+        releasedate: '2022-11-11', 
+        photo: 'https://awsmone.com/wp-content/uploads/2022/07/Black-Panther-2.jpg',
+        summary: 'In Marvel Studios’ “Black Panther: Wakanda Forever,” Queen Ramonda, Shuri, M’Baku, Okoye and the Dora Milaje, fight to protect their nation from intervening world powers in the wake of King T’Challa’s death. As the Wakandans strive to embrace their next chapter, the heroes must band together with the help of War Dog Nakia and Everett Ross and forge a new path for the kingdom of Wakanda. Introducing Namor, king of a hidden undersea nation.',
+      },{
+        id: 38,
+        title:'Ant-Man and the Wasp: Quantumania',
+        filmorserie: 'film',
+        releasedate: '2023-02-17', 
+        photo: 'https://i.pinimg.com/originals/7d/2e/98/7d2e98966afafa8c9b9259505d98c609.jpg',
+        summary: "Super Hero partners Scott Lang and Hope Van Dyne return to continue their adventures as Ant-Man and The Wasp. Together, with Hope's parents Hank Pym and Janet Van Dyne, the family finds themselves exploring the Quantum Realm, interacting with strange new creatures and embarking on an adventure that will push them beyond the limits of what they thought was possible.",
+      },{
+        id: 39,
+        title:'Guardians of the Galaxy Vol. 3',
+        filmorserie: 'film',
+        releasedate: '2023-05-05', 
+        photo: 'https://i.pinimg.com/originals/c5/e6/46/c5e646d42f69c7a2032952a58b60a8c9.png',
+        summary: 'In Guardians of the Galaxy Vol. 3 our beloved band of misfits are looking a bit different these days. Peter Quill, still reeling from the loss of Gamora, must rally his team around him to defend the universe along with protecting one of their own. A mission that, if not completed successfully, could quite possibly lead to the end of the Guardians as we know them.',
+      },{
+        id: 40,
+        title:'The Marvels',
+        filmorserie: 'film',
+        releasedate: '2023-07-28', 
+        photo: 'https://pics.filmaffinity.com/The_Marvels-856138578-large.jpg',
+        summary: 'he Marvels will feature Brie Larson returning to the role of Captain Marvel/Carol Danvers. In the film, she’ll be joined by Teyonah Parris, who was first introduced as adult Monica Rambeau in Marvel Studios’ WandaVision, along with Iman Vellani, who will appear as Ms. Marvel in the upcoming Disney+ series of the same name.',
+      }
+    
 
     ]);
   },

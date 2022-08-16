@@ -686,6 +686,70 @@ module.exports = {
         filmName: 'Falcon and the Wintersoldier',
         characterName: 'Winter Soldier',
       },
+      {
+        filmName: 'Ms. Marvel',
+        characterName: 'Ms. Marvel',
+      },
+      {
+        filmName: 'Ms. Marvel',
+        characterName: 'Captain Marvel',
+      },
+      {
+        filmName: 'She-Hulk: Attorney at Law',
+        characterName: 'She-Hulk',
+      },
+      {
+        filmName: 'She-Hulk: Attorney at Law',
+        characterName: 'Hulk',
+      },
+      {
+        filmName: 'Black Panther: Wakanda Forever',
+        characterName: 'Namor',
+      },
+      {
+        filmName: 'Ant-Man and the Wasp: Quantumania',
+        characterName: 'Ant-Man',
+      },
+      {
+        filmName: 'Ant-Man and the Wasp: Quantumania',
+        characterName: 'Wasp',
+      },
+      {
+        filmName: 'Ant-Man and the Wasp: Quantumania',
+        characterName: 'Kang',
+      },
+      {
+        filmName: 'Guardians of the Galaxy Vol. 3',
+        characterName: 'Starlord',
+      },
+      {
+        filmName: 'Guardians of the Galaxy Vol. 3',
+        characterName: 'Mantis',
+      },
+      {
+        filmName: 'Guardians of the Galaxy Vol. 3',
+        characterName: 'Rocket',
+      },
+      {
+        filmName: 'Guardians of the Galaxy Vol. 3',
+        characterName: 'Groot',
+      },
+      {
+        filmName: 'Guardians of the Galaxy Vol. 3',
+        characterName: 'Drax',
+      },
+      {
+        filmName: 'Guardians of the Galaxy Vol. 3',
+        characterName: 'Thor',
+      },
+      {
+        filmName: 'The Marvels',
+        characterName: 'Ms. Marvel',
+      },
+      {
+        filmName: 'The Marvels',
+        characterName: 'Captain Marvel',
+      },
       
     ]);
   },
